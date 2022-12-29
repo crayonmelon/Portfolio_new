@@ -3,14 +3,19 @@
   src: url(Assets/Fonts/DosFont.ttf);
 }
 
+@font-face {
+  font-family: 'IconFonts';
+  src: url(Assets/Fonts/iconFonts.ttf);
+}
+
 :root {
   --background-text: black;
   --accent-color: #FF00FF;
   --background-color: rgb(102, 51, 153);
 
 
-  --EOTM-color: blue;
-  --itch-color: red;
+  --EOTM-color: rgb(0, 183, 255);
+  --itch-color: rgb(255, 0, 0);
   --github-color: rgb(0, 255, 0);
   --contact-color: yellow;
 
@@ -33,8 +38,33 @@ body {
   height: 100%;
 }
 
+#cover-image {
+  z-index: -1;
+  background: linear-gradient(20deg, var(--background-color), transparent), url(Assets/Images/background.gif);   
+  filter: contrast(2000%) brightness(1000%);
+  background-size: contain;
+  position: absolute;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+}
+
+#background-image-2 {
+  z-index: -1;
+  background: linear-gradient(20deg, rgba(255, 255, 255, 0.493), transparent), url(Assets/Images/EOTM.gif);   
+  background-size: contain;
+  position: absolute;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+}
+
 #top-section {
   margin: 1em;
+}
+
+.icon-text {
+  font-style: IconFonts !important;
 }
 
 .text-background{
@@ -58,7 +88,9 @@ h1 {
   font-size: 3em;
 }
 
-
+p{
+  font-size: 1.2em;
+}
 
 .grid {
 	
@@ -83,6 +115,10 @@ h1 {
   margin-bottom: 3em;
 }
 
+.card:hover {
+  
+}
+
 .card h2 {
   font-size: 2em;
 
@@ -95,14 +131,35 @@ h1 {
 
 .card img {
   width: 100%;
+
+}
+.card img:hover {
+  width: 100%;
+
 }
 
 .card a {
-
+  background-color: var(--background-text);
+  width: max-content;
   color: var(--accent-color);
+}
+
+.card li {
+  list-style-type: square;
+}
+
+.card p {
+  background-color: var(--background-text);
+  width: max-content;
 }
 
 
 .space-padding{
   padding: 5em;
+}
+
+img:hover {
+  scale: 1.1;
+  transform: rotate(2deg);
+  cursor: help;
 }
