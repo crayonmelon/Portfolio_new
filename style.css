@@ -17,7 +17,7 @@
   --github-color: rgb(0, 255, 0);
   --contact-color: yellow;
   --about-color: var(--accent-color);
-  --background-image: url(Assets/Images/background1.gif)
+  --background-image: url(Assets/Images/background-derez.gif)
 }
 
 body {
@@ -98,11 +98,18 @@ h1 {
   background-color: rgb(0, 0, 0);
   margin: 1em;
   filter: drop-shadow(.3em -.3em 0 var(--accent-color));
+  border-color: white;
 
 }
 
 .card legend {
   margin: auto; /* to center */
+  
+}
+
+.card marquee {
+  background-color: white;
+
 }
 .card h2 {
   font-size: 2em;
