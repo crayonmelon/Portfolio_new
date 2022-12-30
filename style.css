@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'DosFont';
-  src: url(Assets/Fonts/DosFont.ttf);
+  src: url(./Assets/Fonts/DOSFont.ttf);
 }
 
 @font-face {
   font-family: 'IconFonts';
-  src: url(Assets/Fonts/iconFonts.ttf);
+  src: url(./Assets/Fonts/iconFonts.ttf);
 }
 
 :root {
@@ -31,7 +31,7 @@ body {
   z-index: -1;
   background: linear-gradient(20deg, var(--background-color), transparent), var(--background-image);   
   filter: contrast(2000%) brightness(1000%);
-  background-size:auto;
+  background-size:contain;
 
   position: absolute;
   top:0; left:0;
