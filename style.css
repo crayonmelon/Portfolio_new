@@ -60,7 +60,7 @@ body {
 }
 
 #top-section {
-  margin: 1em;
+  margin: em;
 }
 
 .icon-text {
@@ -88,37 +88,33 @@ h1 {
   font-size: 3em;
 }
 
-p{
-  font-size: 1.2em;
-}
+
 
 .grid {
 	
 	display: grid;
 	place-items: center;
-	gap: 1rem;
+	gap: 1em;
 
 	/* The fact is that it only takes this one line of code to do a nice grid makes me want to vommit joy */
-  grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
 
 }
-
 
 .card {
 	display: flex;
   flex-direction: column;
   padding: 1em;
-	width: 30em;
+	width: 15em;
   background-color: rgb(0, 0, 0);
-  filter: drop-shadow(.8em .8em 0 var(--accent-color));
+  margin: 3em;
+  filter: drop-shadow(.3em -.3em 0 var(--accent-color));
 
-  margin-bottom: 3em;
 }
 
-.card:hover {
-  
+.card legend {
+  margin: auto; /* to center */
 }
-
 .card h2 {
   font-size: 2em;
 
@@ -129,12 +125,23 @@ p{
   padding: 0;
 }
 
+.card legend {
+  background-color: white;
+  width: max-content;
+  color: black;
+  font-style: bold;
+}
+
 .card img {
-  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 4em;
 
 }
 .card img:hover {
-  width: 100%;
+  width: 4em;
+
 
 }
 
@@ -150,12 +157,11 @@ p{
 
 .card p {
   background-color: var(--background-text);
-  width: max-content;
 }
 
 
 .space-padding{
-  padding: 5em;
+  padding: 1em;
 }
 
 img:hover {
