@@ -31,16 +31,23 @@ body {
 
 #background-image {
   z-index: -1;
-  background: linear-gradient(20deg, var(--background-color), rgba(0, 0, 0, 0.287)), var(--background-image);   
+  background: linear-gradient(20deg, var(--background-color), rgba(0, 0, 0, 0.287)), var(--background-image) no-repeat center center fixed;   
   filter: contrast(1000%) brightness(50%);
-  background-size:cover;
-  background-repeat: repeat;
-  position: absolute;
+  position: fixed;
   top:0; left:0;
-  width: 100%;
-  height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-size:100% 100%;
 }
 
+/* .guestbook-style {
+  height: 10em !important;
+  overflow-y: scroll !important;
+}
+
+.utteranc{
+
+}  */
 /* #cover-image {
   z-index: -1;
   background: linear-gradient(20deg, var(--background-color), transparent), url(Assets/Images/background.gif);   
