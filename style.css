@@ -97,16 +97,51 @@ h1 {
 }
 
 .column {
-  grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+  display: grid;
+  justify-content: center;
+  align-content: center;
+	place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(2em, 1fr));
 
+}
+
+.column-games {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+	place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
+  
+}
+
+.game_icons {
+  background-size: 100% 12em;
+  width: 12em;
+  height: 11em;
+  margin: 1em;
+}
+
+.game_icons p {
+  margin: 1em;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+
+}
+
+.game_icons h3 {
+  margin: 1em;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.column img {
+  width: 2em !important;
 }
 
 .card {
 	display: flex;
   flex-direction: column;
   padding: 1em;
-  width: 40rem;
-	max-width: 60rem;
+	max-width: 70em;
   background-color: rgb(0, 0, 0);
   margin: 1em;
   filter: drop-shadow(.3em -.3em 0 var(--accent-color));
@@ -125,14 +160,15 @@ h1 {
 }
 .card h2 {
   font-size: 2em;
-
-  position: relative;
-  right: 1em;
-  bottom:1em;
-  margin: 0;
   padding: 0;
+  margin: 0;
+
 }
 
+.card h1 {
+  padding: 0;
+  margin: 0;
+}
 .card legend {
   background-color: white;
   width: max-content;
@@ -149,7 +185,7 @@ h1 {
 }
 
 .profile {
-  width: 15em !important;
+  width: 10em !important;
   padding: .1em;
 }
 
