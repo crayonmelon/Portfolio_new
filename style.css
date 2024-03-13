@@ -122,12 +122,17 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
   
 }
+a {
+  text-decoration: none;
+}
 
 .game_icons {
   background-size: 100% 12em;
   width: 12em;
   height: 11em;
   margin: 1em;
+  color: white ;
+  text-decoration: none !important;
 }
 .game_icons:hover {
   background-color: var(--accent-color);
@@ -135,6 +140,9 @@ h1 {
   filter: drop-shadow(.3em .3em 0 var(--background-text));
   scale: 1.1;
   color: yellow;
+  cursor: click !important;
+  text-decoration: none !important;
+
 }
 
 
@@ -180,11 +188,18 @@ h1 {
   padding: 0;
   margin: 0;
 
+
 }
 
 .card h1 {
   padding: 0;
   margin: 0;
+  text-shadow: .05em .05em var(--accent-color);
+}
+
+.card h3 {
+  text-shadow: .05em .05em var(--accent-color);
+
 }
 .card legend {
   background-color: white;
@@ -209,14 +224,8 @@ h1 {
 .card img:hover {
   scale: 1.1;
   transform: rotate(2deg);
-  cursor: help;
+  cursor: click;
   background: url("images/card-front.jpg") no-repeat;
-}
-
-.card a {
-  background-color: var(--background-text);
-  width: max-content;
-  color: var(--accent-color);
 }
 
 .card li {
