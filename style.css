@@ -108,8 +108,8 @@ h1 {
   align-content: center;
 	place-items: center;
   grid-template-columns: repeat(auto-fit, minmax(4em, 1fr));
-
-  width: 100%;
+  
+  width: 100% !important;
 }
   
 .column-games {
