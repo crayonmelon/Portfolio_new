@@ -1,305 +1,83 @@
-@font-face {
-  font-family: 'DosFont';
-  src: url(./Assets/Fonts/DOSFont.ttf);
-}
-
-@font-face {
-  font-family: 'IconFonts';
-  src: url(./Assets/Fonts/iconFonts.ttf);
-}
-
-:root {
-  --background-text: black;
-  --accent-color: #FF00FF;
-  --background-color: rgb(102, 51, 153);
-  --EOTM-color: rgb(0, 183, 255);
-  --itch-color: rgb(255, 0, 0);
-  --github-color: rgb(0, 255, 0);
-  --contact-color: yellow;
-  --about-color: var(--accent-color);
-  --background-image: url(Assets/Images/background-derez.gif)
-}
-
 body {
-  font-family: "DosFont";
-  background: linear-gradient(20deg, var(--background-color), rgba(0, 0, 0, 0.287)), var(--background-image);   
-  
-  background-size:cover;
-
-  color: white;
-  font-size: 1.5em;
+    font-family: 'Itim', cursive;
+    margin: 0;
+    padding: 0;
+    background-image: url('Assets/Images/tiledimage.gif');
+    background-repeat: repeat;
+    background-size: auto;
+    animation: scroll 20s linear infinite;
 }
 
-#background-image {
-  z-index: -1;
-  background: linear-gradient(20deg, var(--background-color), rgba(0, 0, 0, 0.287)), var(--background-image) no-repeat center center fixed;   
-  filter: contrast(1000%) brightness(50%);
-  position: fixed;
-  top:0; left:0;
-  min-width: 100vw;
-  min-height: 100vh;
-  background-size:100% 100%;
+header {
+    text-align: center;
+    background-color: #ffffff9f; /* Optional */
+    padding: 20px;
 }
 
-/* .guestbook-style {
-  height: 10em !important;
-  overflow-y: scroll !important;
+header h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 8vw;
+    padding: 0;
+    margin: 0;
+    white-space: nowrap;
 }
 
-.utteranc{
+header h2 {
+    font-size: 1vw;
+    padding: 0;
+    padding: 0;
 
-}  */
-/* #cover-image {
-  z-index: -1;
-  background: linear-gradient(20deg, var(--background-color), transparent), url(Assets/Images/background.gif);   
-  filter: contrast(2000%) brightness(1000%);
-  background-size: contain;
-  position: absolute;
-  top:0; left:0;
+    margin: 0;
+    white-space: nowrap;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+.game {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+
+    text-align: center;
+    max-width: 600px; /* Increased to fit iframe */
+}
+
+.game img {
   width: 100%;
-  height: 100%;
-} */
-
-#top-section {
-  margin-left: 1em;
 }
 
-.icon-text {
-  font-family: IconFonts !important;
+.game img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
 }
 
-.text-background{
-  background-color: var(--background-text);
-  width: max-content;
-  text-shadow: .05em .05em var(--accent-color);
-
+.person img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
 }
 
-.text-background:hover{
-  background-color: var(--accent-color);
-  text-shadow: .05em .05em var(--background-text);
-  filter: drop-shadow(.3em .3em 0 var(--background-text));
-  scale: 1.1;
+.person {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffffff9f; /* Optional */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional shadow */
+    text-align: center;
 }
 
-h1 {
-  font-size: 3em;
-}
-
-.grid {
-	display: grid;
-  justify-content: center;
-  align-content: center;
-	gap: 1em;
-	/* The fact is that it only takes this one line of code to do a nice grid makes me want to vommit joy */
-
-}
-
-.container-card {
-  display: grid; 
-  justify-content: center;
-}
-
-.column { 
-  
-  display: grid; 
-
-  justify-content: center;
-  align-content: center;
-	place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(4em, 1fr));
-  
-  width: 100% !important;
-}
-  
-.column-games {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-	place-items: center;
-  grid-template-columns: repeat(auto-fit, minmax(12em, 1fr));
-  
-}
-
-.columns-text {
-  display: grid;
-  justify-content: right;
-  align-content: left;
-	place-items: left;
-  grid-template-columns: repeat(auto-fit, minmax(1em, 1fr));
-  
-}
-a {
-  text-decoration: none;
-  padding: 0;
-  margin: 0;
-}
-
-.game_icons {
-
-  background-size: 100% 12em;
-  width: 12em;
-  height: 11em;
-  color: white ;
-  text-decoration: none !important;
-}
-.game_icons:hover {
-  background-color: var(--accent-color);
-  text-shadow: .05em .05em var(--background-text);
-  filter: drop-shadow(.3em .3em 0 var(--background-text));
-  scale: 1.1;
-  color: yellow;
-  cursor: click !important;
-  text-decoration: none !important;
-
-}
-
-
-.game_icons p {
-  margin: 1em;
-  background-color: rgba(0, 0, 0, 0.5) !important;
-
-}
-
-.game_icons h3 {
-  margin: 1em;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.column img {
-  width: 2em !important;
-}
-
-.card {
-	display: flex;
-  flex-direction: column;
-  padding: 1em;
-	max-width: 60em;
-  background-color: rgb(0, 0, 0);
-  margin: 1em;
-  filter: drop-shadow(.3em -.3em 0 var(--accent-color));
-  border-color: white;
-
-}
-
-.card legend {
-  margin: auto; /* to center */
-  
-}
-
-.card marquee {
-  background-color: white;
-
-}
-.card h2 {
-  font-size: 2em;
-  padding: 0;
-  margin: 0;
-
-
-}
-
-.card h1 {
-  padding: 0;
-  margin: 0;
-  text-shadow: .05em .05em var(--accent-color);
-}
-
-.card h3 {
-  text-shadow: .05em .05em var(--accent-color);
-
-}
-.card legend {
-  background-color: white;
-  width: max-content;
-  color: black;
-  font-style: bold;
-}
-
-.card img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 4em;
-
-}
-
-.profile {
-  width: 10em !important;
-  padding: .1em;
-}
-
-.card img:hover {
-  scale: 1.1;
-  transform: rotate(2deg);
-  cursor: click;
-  background: url("images/card-front.jpg") no-repeat;
-}
-
-.card li {
-  list-style-type: square;
-}
-
-.card p {
-  background-color: var(--background-text);
-}
-
-.space-padding{
-  padding: 2em;
-}
-
-.second-legend {
-  position: absolute;
-  right: calc( -6em );
-  bottom: 50%;
-  margin: 0;
-  padding: 0;
-  min-width: 12em;
-  max-width: 12em;
-  box-sizing: border-box;
-  transform: rotate(90deg);
-}
-
-/* .third-legend {
-  position: absolute;
-  left: calc( -6em );
-  bottom: 50%;
-  margin: 0;
-  padding: 0;
-  min-width: 12em;
-  max-width: 12em;
-  box-sizing: border-box;
-  transform: rotate(90deg);
-}
-
-.bottom-legend {
-  position: relative;
-  bottom: -1.8em;
-} */
-
-marquee {
-  font-weight: 2;
-}
-
-.dingbat {
-  font-family: IconFonts !important;
-}
-
-.container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-}
-
-/* Then style the iframe to fit in the container div with full height and width */
-.responsive-iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+@keyframes scroll {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
