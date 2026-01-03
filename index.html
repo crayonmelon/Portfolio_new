@@ -26,8 +26,7 @@
 <section id="games">
     <h2>Games</h2>
     <div class="game">
-        <h3>Funi Raccoon Game</h3>
-        <img src="Assets/Images/Icons/cd_Case.gif" alt="Funi Raccoon Game Screenshot" width="560" height="315">
+        <img src="Assets/Images/Icons/cd_Case.gif" alt="Funi Raccoon Game Screenshot" >
     </div>
     <div class="game">
         <h3>INCARCERATION</h3>
@@ -49,5 +48,14 @@
         <h3>Kit</h3>
     </div>
 </section>
+
+<script>
+document.querySelector('.game img').addEventListener('mouseenter', () => {
+    document.body.style.backgroundImage = "url('Assets/Images/background-derez.gif')";
+});
+document.querySelector('.game img').addEventListener('mouseleave', () => {
+    document.body.style.backgroundImage = "url('Assets/Images/tiledimage.gif')";
+});
+</script>
 
 </body>

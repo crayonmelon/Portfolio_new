@@ -45,15 +45,18 @@ section {
     max-width: 600px; /* Increased to fit iframe */
 }
 
-.game img {
-  width: 100%;
-}
+
 
 .game img {
-    max-width: 200px;
+    max-width: 600px;
     height: auto;
     display: block;
     margin: 0 auto 10px;
+}
+
+.game img:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
 }
 
 .person img {
