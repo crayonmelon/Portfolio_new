@@ -4,8 +4,13 @@
 
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>CRAYON EATING COMPANY</title>
@@ -13,49 +18,106 @@
     <meta name="author" content="Cí Malone">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="glitch-effect.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 </head>
 
 <body>
 
-<header>
-    <h1 class="glitch" data-text="THE CRAYON EATING COMPANY">THE CRAYON EATING COMPANY</h1>
-    <h2>We make Games</h2>
-</header>
+
+<!-- <header class="grainy-background">
+    <h1 data-text="THE CRAYON EATING COMPANY">THE CRAYON EATING COMPANY</h1>
+ 
+</header> -->
 
 <section id="games">
-    <h2>Games</h2>
     <div class="game">
-        <img src="Assets/Images/Icons/cd_Case.gif" alt="Funi Raccoon Game Screenshot" >
+        <img id="funi_cd" src="Assets/Images/game_icons/funi_raccoon_cd.png" alt="Funi Raccoon Game" >
     </div>
     <div class="game">
-        <h3>INCARCERATION</h3>
-        <video controls width="560" height="315">
-            <source src="Assets/videos/trailer_car.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <img id="incar_cd"  src="Assets/Images/game_icons/incarceration_gba.png" alt="INCARCERATION" >
+
     </div>
 </section>
 
-<section id="people">
+<!-- <section id="people">
     <h2>The People</h2>
     <div class="person">
-        <img src="Assets/Images/Icons/me_profile.gif" alt="Cí">
+        <img src="Assets/Images/people/Cí.png" alt="Cí">
         <h3>Cí</h3>
     </div>
     <div class="person">
-        <img src="Assets/Images/Icons/kit.jpg" alt="Kit">
+        <img src="Assets/Images/people/Kit.png" alt="Kit">
         <h3>Kit</h3>
     </div>
-</section>
+</section> -->
+
+
+<video id="background-video" autoplay muted loop playsinline>
+    <source src="" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
 
 <script>
-document.querySelector('.game img').addEventListener('mouseenter', () => {
-    document.body.style.backgroundImage = "url('Assets/Images/background-derez.gif')";
+
+$("#funi_cd").hover(
+    function() {
+        $(this).attr("src", "Assets/Images/game_icons/funi_raccoon_cd.gif");
+    },
+    function() {
+        $(this).attr("src", "Assets/Images/game_icons/funi_raccoon_cd.png");
+    }                         
+);  
+
+
+$("#incar_cd").hover(
+    function() {
+        $(this).attr("src", "Assets/Images/game_icons/incarceration_gba.gif");
+    },
+    function() {
+        $(this).attr("src", "Assets/Images/game_icons/incarceration_gba.png");
+    }                         
+);  
+
+$('#funi_cd').on('click', function() {
+    window.location.href = 'https://store.steampowered.com/app/3599690/Funi_Raccoon_Game/';
 });
-document.querySelector('.game img').addEventListener('mouseleave', () => {
-    document.body.style.backgroundImage = "url('Assets/Images/tiledimage.gif')";
+
+
+const video = document.getElementById('background-video');
+const source = video.querySelector('source');
+
+document.getElementById('funi_cd').addEventListener('mouseenter', () => {
+    source.src = 'Assets/videos/Funi Raccoon Trailer.mp4';
+    video.load();
 });
+
+document.getElementById('funi_cd').addEventListener('mouseleave', () => {
+    source.src = '';
+    video.load();
+});
+
+
+document.getElementById('incar_cd').addEventListener('mouseleave', () => {
+    source.src = '';
+    video.load();
+});
+
+
+document.getElementById('incar_cd').addEventListener('mouseenter', () => {
+    source.src = 'Assets/videos/trailer_car.mp4';
+    video.load();
+});
+
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    $('incar_cd').attr("src", "Assets/Images/game_icons/incarceration_gba.gif");
+    $('funi_cd').attr("src", "Assets/Images/game_icons/funi_raccoon_cd.gif");
+}
+
+
 </script>
 
 </body>
