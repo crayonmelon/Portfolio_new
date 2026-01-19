@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Spinning Logos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @font-face {
+            font-family: 'VolkornBold';
+            src: url('Assets/Fonts/VollkornBlack-p73ZD.ttf') format('truetype');
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            background: #000;
+            font-family: 'VolkornBold', serif;
+            overflow: auto;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            padding: 10px;
+            min-height: 100vh;
+        }
+
+        .spinning-logo {
+            width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .spinning-logo:hover {
+            animation: spin var(--spin-speed, 0.5s) linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .spinning-logo img {
+            width: 85%;
+            height: 85%;
+            object-fit: contain;
+        }
+
+        .back-link {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            color: #ffea00;
+            text-decoration: none;
+            font-size: 20px;
+            text-shadow: 5px 5px #9b3a02;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.9);
+            padding: 10px 15px;
+            border-radius: 8px;
+        }
+
+        .back-link:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">← Back</a>
+    <div class="container" id="logoContainer"></div>
+
+    <script>
+        const logoContainer = document.getElementById('logoContainer');
+
+        // Create 100+ spinning logos to fill the website
+        for (let i = 0; i < 100; i++) {
+            const logoDiv = document.createElement('div');
+            logoDiv.className = 'spinning-logo';
+            logoDiv.innerHTML = '<img src="Assets/Images/iconCrayonCompany.png" alt="Logo">';
+            
+            // Add random spin speed on hover (between 0.2s and 0.8s)
+            const randomSpeed = (Math.random() * 0.6 + 0.2).toFixed(2);
+            logoDiv.style.setProperty('--spin-speed', `${randomSpeed}s`);
+            
+            logoContainer.appendChild(logoDiv);
+        }
+    </script>
+</body>
+</html>

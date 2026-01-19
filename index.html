@@ -28,23 +28,25 @@
 
 <header class="grainy-background">
     <div class="header-container">
-        <div class="logo-placeholder">
-        <img src="Assets/Images/iconCrayonCompany.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Crayon Eating Company Logo">
-
-        </div>
+        <a href="time.html" class="logo-placeholder">
+            <img src="Assets/Images/iconCrayonCompany.png" style="width: 100%; height: 100%; object-fit: contain;" alt="Crayon Eating Company Logo">
+        </a>
         <h1 data-text="THE CRAYON EATING COMPANY">THE CRAYON EATING <br>COMPANY</h1>
         <div class="socials">
-            <a href="https://twitter.com" target="_blank" class="social-link">
-                <img src="Assets/Images/Icons/bluesky.gif" alt="Twitter">
+            <a href="https://x.com/CrayonMelon" target="_blank" class="social-link">
+                <img src="Assets/Images/Icons/twitter.gif" alt="Twitter">
             </a>
-            <a href="https://instagram.com" target="_blank" class="social-link">
-                <img src="Assets/Images/Icons/email.gif" alt="Instagram">
+            <a href="https://www.instagram.com/kitworldz/" target="_blank" class="social-link">
+                <img src="Assets/Images/Icons/instagram.gif" alt="Instagram">
             </a>
-            <a href="https://discord.com" target="_blank" class="social-link">
-                <img src="Assets/Images/Icons/twitter.gif" alt="Discord">
+            <a href="https://bsky.app/profile/crayondev.ie" target="_blank" class="social-link">
+                <img src="Assets/Images/Icons/bluesky.gif" alt="bluesky">
             </a>
-            <a href="https://discord.com" target="_blank" class="social-link">
-                <img src="Assets/Images/Icons/tiktok.gif" alt="Discord">
+            <a href="https://www.tiktok.com/@crayondev" target="_blank" class="social-link">
+                <img src="Assets/Images/Icons/tiktok.gif" alt="tiktok">
+            </a>
+            <a href="mailto:ci_malone@crayondev.ie" target="_blank" class="social-link">
+                <img src="Assets/Images/Icons/email.gif" alt="email">
             </a>
         </div>
     </div>
@@ -53,32 +55,39 @@
 
 <main class="center-content">
     <section id="games">
-        <div class="game">
-            <img id="funi_cd" src="Assets/Images/game_icons/funi_raccoon_cd.png" alt="Funi Raccoon Game" >
-            <div class="game-info">
-                <h3>Funi Raccoon Game</h3>
-                <a href="https://store.steampowered.com/app/3599690/Funi_Raccoon_Game/" target="_blank">Play Now</a>
+        <a href="https://store.steampowered.com/app/3599690/Funi_Raccoon_Game/" target="_blank" class="game-link">
+            <div class="game">
+                <div class="game-info">
+                    <h3>Funi Raccoon Game</h3>
+                </div>
             </div>
-        </div>
-        <div class="game">
-            <img id="incar_cd"  src="Assets/Images/game_icons/incarceration_gba.png" alt="INCARCERATION" >
-            <div class="game-info">
-                <h3>INCARCERATION</h3>
-                <a href="#" target="_blank">Play Now</a>
+        </a>
+        <a href="https://crayonmelon.itch.io/incar" class="game-link">
+            <div class="game"  id="game2">
+                <!-- <img id="incar_cd"  src="Assets/Images/game_icons/incarceration_gba.png" alt="INCARCERATION" > -->
+                <div class="game-info">
+                    <h3>INCARCERATION</h3>
+                </div>
             </div>
-        </div>
+        </a>
     </section>
+
+    <hr class="section-divider">
 
     <section id="people">
         <h2>The People</h2>
-        <div class="person">
-            <img src="Assets/Images/people/Cí.png" alt="Cí">
+    </section>
+
+    <section id="people">
+        <a href="https://crayonmelon.itch.io/" class="person">
             <h3>Cí</h3>
-        </div>
-        <div class="person">
+
+            <img src="Assets/Images/people/Cí.png" alt="Cí">
+        </a>
+        <a href="https://linktr.ee/kitworldz" class="person">
             <img src="Assets/Images/people/Kit.png" alt="Kit">
             <h3>Kit</h3>
-        </div>
+        </a>
     </section>
 </main>
 
@@ -92,61 +101,44 @@
 
 <script>
 
-$("#funi_cd").hover(
-    function() {
-        $(this).attr("src", "Assets/Images/game_icons/funi_raccoon_cd.gif");
-    },
-    function() {
-        $(this).attr("src", "Assets/Images/game_icons/funi_raccoon_cd.png");
-    }                         
-);  
-
-
-$("#incar_cd").hover(
-    function() {
-        $(this).attr("src", "Assets/Images/game_icons/incarceration_gba.gif");
-    },
-    function() {
-        $(this).attr("src", "Assets/Images/game_icons/incarceration_gba.png");
-    }                         
-);  
-
-$('#funi_cd').on('click', function() {
-    window.location.href = 'https://store.steampowered.com/app/3599690/Funi_Raccoon_Game/';
-});
-
-
 const video = document.getElementById('background-video');
 const source = video.querySelector('source');
 
-document.getElementById('funi_cd').addEventListener('mouseenter', () => {
-    source.src = 'Assets/videos/Funi Raccoon Trailer.mp4';
-    video.load();
+// Get all game links
+const gameLinks = document.querySelectorAll('.game-link');
+
+gameLinks.forEach((link, index) => {
+    let videoSrc = '';
+    
+    if (index === 0) {
+        // First game: Funi Raccoon
+        videoSrc = 'Assets/videos/Funi Raccoon Trailer.mp4';
+    } else if (index === 1) {
+        // Second game: Incarceration
+        videoSrc = 'Assets/videos/trailer_car.mp4';
+    }
+    
+    link.addEventListener('mouseenter', () => {
+        if (videoSrc) {
+            source.src = videoSrc;
+            video.load();
+        }
+    });
+    
+    link.addEventListener('mouseleave', () => {
+        source.src = '';
+        video.load();
+    });
 });
-
-document.getElementById('funi_cd').addEventListener('mouseleave', () => {
-    source.src = '';
-    video.load();
-});
-
-
-document.getElementById('incar_cd').addEventListener('mouseleave', () => {
-    source.src = '';
-    video.load();
-});
-
-
-document.getElementById('incar_cd').addEventListener('mouseenter', () => {
-    source.src = 'Assets/videos/trailer_car.mp4';
-    video.load();
-});
-
 
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-    $('incar_cd').attr("src", "Assets/Images/game_icons/incarceration_gba.gif");
-    $('funi_cd').attr("src", "Assets/Images/game_icons/funi_raccoon_cd.gif");
+    document.querySelectorAll('.game-info').forEach(gameInfo => {
+        const bgImage = gameInfo.style.backgroundImage;
+        if (bgImage) {
+            gameInfo.style.backgroundImage = bgImage;
+        }
+    });
 }
-
 
 </script>
 

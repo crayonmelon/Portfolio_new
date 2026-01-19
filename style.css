@@ -55,9 +55,29 @@ header {
 .logo-placeholder {
     width: 100px;
     height: 100px;
-    border: 2px solid #ffea00;
+    border: 10px solid #ffea00;
+    background-color: #ffea00;
     border-radius: 8px;
+    box-shadow: 5px 5px #9b3a02;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.logo-placeholder:hover {
+    animation: flip 0.3s infinite linear;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
 }
 
 .socials {
@@ -68,6 +88,7 @@ header {
     align-self: flex-start;
 }
 
+
 .social-link {
     display: flex;
     align-items: center;
@@ -76,8 +97,8 @@ header {
 }
 
 .social-link img {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -92,30 +113,36 @@ header {
         gap: 15px;
     }
     
-    .logo-placeholder {
-        width: 80px;
-        height: 80px;
-    }
-    
+
     .socials {
         gap: 15px;
     }
     
     .social-link img {
-        width: 40px;
-        height: 40px;
+        width: 70px;
+        height: 70px;
+    }
+
+    .socials {
+        align-self: center;
     }
 }
 
 #people {
     color: #ffea00;
-    margin-top: 40px;
-    padding-top: 40px;
-    border-top: 10px solid #ffea00;
+
     display: flex;
-    flex-direction: column;
     align-items: center;
-    width: 100%;
+    justify-content:center;
+    gap: 60px;
+}
+
+.section-divider {
+    border: 10px;
+    height: 10px;
+    background-color: #ffea00;
+    margin: 60px auto;
+    width: 80%;
 }
 
 header h1 {
@@ -135,13 +162,13 @@ header h1 {
 
 @media (max-width: 768px) {
     header h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.5em;
+        font-size: 2em;
     }
 }
 
@@ -160,6 +187,7 @@ header h2 {
     padding: 0;
     margin: 0 0 30px 0;
     color: #ffea00;
+    text-shadow: 5px 5px #9b3a02;
 }
 
 section {
@@ -170,33 +198,31 @@ section {
 #games {
     display: flex;
     align-items: center;
+    justify-content:center;
+    gap: 60px;
+}
+
+.game-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
     justify-content: center;
-    width: 100%;
-    gap: 0;
+    cursor: pointer;
 }
 
 .game {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    padding: 30px;
-    width: 40%;
+    gap: 100px;
     justify-content: flex-start;
-}
-
-.game img {
-
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    flex-shrink: 0;
-    transform: scale(1);
     transition: transform 0.3s ease;
-    cursor: pointer;
+    flex: 1;
 }
 
-.game img:hover {
+
+
+.game:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
@@ -204,9 +230,44 @@ section {
 .game-info {
     display: flex;
     flex-direction: column;
-    gap: 20px;
     align-items: center;
     text-align: center;
+    background-image: url(Assets/Images/game_icons/funi_raccoon_cd.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 90vw;
+    height: 90vw;
+    max-height: 550px;
+    max-width: 550px;
+    justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+    .game-info {
+        max-height: 450px;
+        max-width: 450px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .game-info {
+        max-height: 550px;
+        max-width: 550px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .game-info {
+        max-height: 800px;
+        max-width: 800px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .game-info {
+        max-height: 1000px;
+        max-width: 1000px;
+    }
 }
 
 .game-info h3 {
@@ -232,23 +293,19 @@ section {
     background-color: #ffea00;
 }
 
+#game2 .game-info   {
+    background-image: url(Assets/Images/game_icons/incarceration_gba.gif) !important;
+}
+
 @media (max-width: 768px) {
     #games {
         flex-direction: column;
         gap: 40px;
     }
-    
-    .game {
-        width: 100%;
-        padding: 20px;
-    }
-    
-    .game img {
-        max-height: 60vh;
-    }
-    
+
+
     .game-info h3 {
-        font-size: 1.6em;
+        /* font-size: 1.6em; */
     }
 }
 
@@ -256,17 +313,25 @@ section {
     max-width: 150px;
     height: auto;
     display: block;
-    margin: 0 auto 15px;
+    margin: 0 20px 0 0;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .person {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
+    text-align: left;
     padding: 20px;
+    gap: 20px;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.person:hover {
+    transform: scale(1.1);
 }
 
 .person h3 {
@@ -282,6 +347,15 @@ section {
     
     .person h3 {
         font-size: 1.2em;
+    }
+
+    .person {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .person img {
+        margin: 0 0 15px 0;
     }
 }
 
